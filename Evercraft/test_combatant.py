@@ -22,13 +22,16 @@ class TestCombatant(unittest.TestCase):
         else:
             self.assertTrue(opponent.checkHit(dieRoll))
 
-    def test_damage(self):
+    def test_is_alive(self):
         player = Combatant()
         player.attacked(player.getDieRoll())
-        if player.getHitPoints() <= 0:
-            self.assertFalse(player.isAlive())
-        else:
-            self.assertTrue(player.isAlive())
+        self.assertTrue(player.isAlive())
+
+    def test_is_dead(self):
+        player = Combatant()
+        player.hitpoints = 1
+        player.attacked(player.getDieRoll())
+        self.assertFalse(player.isAlive())
 
 
 if __name__ == '__main__':

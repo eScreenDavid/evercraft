@@ -23,4 +23,4 @@ class Combatant(Character):
             self.hitpoints -= 2 * self.baseDamage
 
     def isAlive(self):
-        return self.hitpoints <= 20
+        return self.hitpoints > 0
