@@ -1,7 +1,13 @@
+
+import unittest
 from character import Character
 
-print("Starting Test...")
+class CharacterTest(unittest.TestCase):
 
-player = Character()
-player.setName("MasterDonkey")
-assert player.getName() is "MasterDonkey"
+    def test_upper(self):
+      player = Character()
+      player.setName("MasterDonkey")
+      self.assertEqual(player.getName(),  "MasterDonkey")
+
+if __name__ == '__main__':
+    unittest.main()
