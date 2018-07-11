@@ -11,7 +11,7 @@ class Combatant(Character):
         return random.randint(1, 20)
 
     def checkHit(self, roll):
-        if roll > Combatant.armor:
+        if roll > self.armor:
             return True
         return False
 

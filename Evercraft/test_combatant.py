@@ -33,6 +33,13 @@ class TestCombatant(unittest.TestCase):
         player.attacked(player.getDieRoll())
         self.assertFalse(player.isAlive())
 
+    def test_attribute_modifiers_on_hitting(self):
+        player1 = Combatant()
+        player2 = Combatant()
+        player2.setAttribute("STRENGTH", 14)
+        bonusHit = player2.getModifier(player2.attribute.get("STRENGTH"))
+        self.assertTrue(player1.checkHit(9+bonusHit))
+
 
 if __name__ == '__main__':
     unittest.main()
