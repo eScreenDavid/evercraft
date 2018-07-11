@@ -37,7 +37,7 @@ class TestCombatant(unittest.TestCase):
         player1 = Combatant()
         player2 = Combatant()
         player2.setAttribute("STRENGTH", 14)
-        bonusHit = player2.getModifier(player2.attribute.get("STRENGTH"))
+        bonusHit = player2.getModifier(player2.abilities.get("STRENGTH"))
         self.assertTrue(player1.checkHit(9+bonusHit))
 
 

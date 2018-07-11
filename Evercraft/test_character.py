@@ -31,8 +31,8 @@ class CharacterTest(unittest.TestCase):
             player.setAlignment('')
 
     def test_default_abilities(self):
-        player = Character()
-        self.assertDictEqual(player.abilities, {
+        playerx = Character()
+        self.assertDictEqual(playerx.abilities, {
                              'STRENGTH': 10, 'DEXETERITY': 10, 'CONSTITUTION': 10, 'WISDOM': 10, 'INTELLIGENCE': 10, 'CHARISMA': 10})
 
     def test_start_modifier(self):
@@ -73,6 +73,7 @@ class CharacterTest(unittest.TestCase):
         self.assertEqual(player.getDamage(), 1)
         player.setAttribute("CONSTITUTION", 1)
         self.assertEqual(player.getHitPoints(), 1)
+
 
 if __name__ == '__main__':
     unittest.main()

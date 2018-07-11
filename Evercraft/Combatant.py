@@ -5,7 +5,7 @@ import random
 class Combatant(Character):
 
     def __init__(self):
-        pass
+        super().__init__()
 
     def getDieRoll(self):
         return random.randint(1, 20)
