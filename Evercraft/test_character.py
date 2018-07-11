@@ -29,5 +29,13 @@ class CharacterTest(unittest.TestCase):
         with self.assertRaises(ValueError):
             player.setAlignment('')
 
+    def test_armor_default(self):
+        player = Character()
+        self.assertEqual(player.getArmor(), 10)
+
+    def test_hitpoint_default(self):
+        player = Character()
+        self.assertEqual(player.getHitPoints(), 5)
+
 if __name__ == '__main__':
     unittest.main()
