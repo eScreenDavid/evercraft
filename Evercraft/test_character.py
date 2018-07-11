@@ -32,7 +32,7 @@ class CharacterTest(unittest.TestCase):
 
     def test_default_abilities(self):
         player = Character()
-        self.assertListEqual(player.abilities, {
+        self.assertDictEqual(player.abilities, {
                              'STRENGTH': 10, 'DEXETERITY': 10, 'CONSTITUTION': 10, 'WISDOM': 10, 'INTELLIGENCE': 10, 'CHARISMA': 10})
 
     def test_start_modifier(self):
