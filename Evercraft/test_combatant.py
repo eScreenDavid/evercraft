@@ -13,14 +13,14 @@ class TestCombatant(unittest.TestCase):
         player = Combatant()
         self.assertEqual(player.getHitPoints(), 5)
 
-    def test_roll_die(self):
+    def test_hit(self):
         player = Combatant()
         opponent = Combatant()
         dieRoll = player.getDieRoll()
         if(dieRoll < opponent.getArmor()):
-            self.assertLess(dieRoll, opponent.getArmor())
+            self.assertFalse(opponent.checkHit(dieRoll))
         else:
-            self.assertGreaterEqual(dieRoll, opponent.getArmor())
+            self.assertTrue(opponent.checkHit(dieRoll))
 
 
 if __name__ == '__main__':
