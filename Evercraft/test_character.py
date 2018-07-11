@@ -35,6 +35,18 @@ class CharacterTest(unittest.TestCase):
         self.assertListEqual(player.abilities, {
                              'STRENGTH': 10, 'DEXETERITY': 10, 'CONSTITUTION': 10, 'WISDOM': 10, 'INTELLIGENCE': 10, 'CHARISMA': 10})
 
+    def test_start_modifier(self):
+        player = Character()
+        self.assertEqual(player.getModifier(1), -5)
+
+    def test_middle_modifier(self):
+        player = Character()
+        self.assertEqual(player.getModifier(10), 0)
+
+    def test_end_modifier(self):
+        player = Character()
+        self.assertEqual(player.getModifier(20), 5)
+
 
 if __name__ == '__main__':
     unittest.main()
