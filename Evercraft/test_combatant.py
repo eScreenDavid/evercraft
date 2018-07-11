@@ -17,7 +17,7 @@ class TestCombatant(unittest.TestCase):
         player = Combatant()
         opponent = Combatant()
         dieRoll = player.getDieRoll()
-        if(dieRoll < opponent.getArmor()):
+        if(dieRoll <= opponent.getArmor()):
             self.assertFalse(opponent.checkHit(dieRoll))
         else:
             self.assertTrue(opponent.checkHit(dieRoll))
@@ -39,6 +39,18 @@ class TestCombatant(unittest.TestCase):
         player2.setAttribute("STRENGTH", 14)
         bonusHit = player2.getModifier(player2.abilities.get("STRENGTH"))
         self.assertTrue(player1.checkHit(9+bonusHit))
+
+    def test_experience_gain(self):
+        player = Combatant()
+
+        for i in range(10):
+            dieRoll = player.getDieRoll()
+            initialExperience = player.experience
+            player.attacked(dieRoll)
+            if player.checkHit(dieRoll):
+                self.assertEqual(player.experience, initialExperience + 10)
+            else:
+                self.assertEqual(player.experience, initialExperience)
 
 
 if __name__ == '__main__':
