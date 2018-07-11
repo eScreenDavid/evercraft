@@ -27,3 +27,5 @@ class Character:
 
   def getHitPoints(self):
       return self.hitpoints
+
+
