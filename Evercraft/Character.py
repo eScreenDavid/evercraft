@@ -15,6 +15,7 @@ class Character:
         self.armor = 10  # defaults to 10
         self.hitpoints = 5  # defaults to 5
         self.damage = 1  # defaults to 1
+        self.experience = 0 #defaults to 0
 
     def getModifier(self, attribute):
         if attribute < 0 or attribute > 20:
@@ -82,3 +83,4 @@ class Character:
             self.hitpoints = 1
         if(self.damage < 1):
             self.damage = 1
+

@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>ecaed8c7-8759-4412-99c6-1a4e1e069d5a</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Evercraft.py</StartupFile>
+    <StartupFile>Character.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,8 +22,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Character.py" />
-    <Compile Include="Evercraft.py" />
+    <Compile Include="Combatant.py" />
     <Compile Include="test_character.py" />
+    <Compile Include="test_combatant.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

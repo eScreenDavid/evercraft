@@ -42,12 +42,14 @@ class TestCombatant(unittest.TestCase):
 
     def test_experience_gain(self):
         player = Combatant()
+        challenger = Combatant()
 
         for i in range(10):
             dieRoll = player.getDieRoll()
             initialExperience = player.experience
-            player.attacked(dieRoll)
-            if player.checkHit(dieRoll):
+            
+            if player.hitEnemy(dieRoll, challenger.getArmor()):
+                challenger.attacked(dieRoll)
                 self.assertEqual(player.experience, initialExperience + 10)
             else:
                 self.assertEqual(player.experience, initialExperience)

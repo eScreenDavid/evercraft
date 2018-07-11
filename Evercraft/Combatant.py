@@ -1,7 +1,6 @@
 from Character import Character
 import random
 
-
 class Combatant(Character):
 
     def __init__(self):
@@ -12,6 +11,12 @@ class Combatant(Character):
 
     def checkHit(self, roll):
         if roll > self.armor:
+            return True
+        return False
+
+    def hitEnemy(self, roll, enemyAC):
+        if roll > enemyAC:
+            self.experience += 10
             return True
         return False
 
