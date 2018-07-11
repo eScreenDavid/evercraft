@@ -1,0 +1,9 @@
+[
+  "test_character.py::CharacterTest::test_alignment_evil",
+  "test_character.py::CharacterTest::test_alignment_exception",
+  "test_character.py::CharacterTest::test_alignment_good",
+  "test_character.py::CharacterTest::test_alignment_neutral",
+  "test_character.py::CharacterTest::test_armor_default",
+  "test_character.py::CharacterTest::test_hitpoint_default",
+  "test_character.py::CharacterTest::test_playername"
+]
