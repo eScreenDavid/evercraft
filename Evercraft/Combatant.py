@@ -3,7 +3,7 @@ import random
 
 
 class Combatant(Character):
-    baseDamage = 1
+    damage = 1
 
     def __init__(self):
         pass
@@ -18,9 +18,9 @@ class Combatant(Character):
 
     def attacked(self, dieRoll):
         if dieRoll < 20:
-            self.hitpoints -= self.baseDamage
+            self.hitpoints -= self.damage
         else:
-            self.hitpoints -= 2 * self.baseDamage
+            self.hitpoints -= 2 * self.damage
 
     def isAlive(self):
         return self.hitpoints > 0
