@@ -23,13 +23,13 @@ class TestCombatant(unittest.TestCase):
             self.assertTrue(opponent.checkHit(dieRoll))
 
     def test_damage(self):
-        damage_amount = 1 # 1 damage is the base amount if a hit is successful
         player = Combatant()
-        player1.attacked(player1.getDieRoll(), damage_amount)
-        if player1.getHP <= 0:
-            self.assertFalse(player1.isAlive())
+        player.attacked(player.getDieRoll())
+        if player.getHitPoints() <= 0:
+            self.assertFalse(player.isAlive())
         else:
-            self.assertTrue(player1.getAlive())
+            self.assertTrue(player.isAlive())
+
 
 if __name__ == '__main__':
     unittest.main()
