@@ -30,13 +30,10 @@ class CharacterTest(unittest.TestCase):
         with self.assertRaises(ValueError):
             player.setAlignment('')
 
-    def test_armor_default(self):
+    def test_default_abilities(self):
         player = Character()
-        self.assertEqual(player.getArmor(), 10)
-
-    def test_hitpoint_default(self):
-        player = Character()
-        self.assertEqual(player.getHitPoints(), 5)
+        self.assertListEqual(player.abilities, {
+                             'STRENGTH': 10, 'DEXETERITY': 10, 'CONSTITUTION': 10, 'WISDOM': 10, 'INTELLIGENCE': 10, 'CHARISMA': 10})
 
 
 if __name__ == '__main__':
