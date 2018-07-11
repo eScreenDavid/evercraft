@@ -47,6 +47,32 @@ class CharacterTest(unittest.TestCase):
         player = Character()
         self.assertEqual(player.getModifier(20), 5)
 
+    def test_modifier_out_of_bounds(self):
+        player = Character()
+        with self.assertRaises(ValueError):
+            player.getModifier(21)
+
+    def test_attribute_modifiers_on_strength(self):
+        player = Character()
+        player.setAttribute("STRENGTH", 13)
+        self.assertEqual(player.getDamage(), 2)
+
+    def test_attribute_modifiers_on_dexterity(self):
+        player = Character()
+        player.setAttribute("DEXTERITY", 7)
+        self.assertEqual(player.getArmor(), 8)
+
+    def test_attribute_modifiers_on_constitution(self):
+        player = Character()
+        player.setAttribute("CONSTITUTION", 18)
+        self.assertEqual(player.getHitPoints(), 9)
+
+    def test_attribute_modifiers_boundaries(self):
+        player = Character()
+        player.setAttribute("STRENGTH", 1)
+        self.assertEqual(player.getDamage(), 1)
+        player.setAttribute("CONSTITUTION", 1)
+        self.assertEqual(player.getHitPoints(), 1)
 
 if __name__ == '__main__':
     unittest.main()

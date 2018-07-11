@@ -3,7 +3,6 @@ import random
 
 
 class Combatant(Character):
-    damage = 1
 
     def __init__(self):
         pass

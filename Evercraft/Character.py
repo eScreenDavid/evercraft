@@ -3,6 +3,7 @@ class Character:
 
   armor = 10 #defaults to 10
   hitpoints = 5 #defaults to 5
+  damage = 1 #defaults to 1
 
   abilities = {
         'STRENGTH': 10, 
