@@ -13,7 +13,7 @@ class CharacterTest(unittest.TestCase):
     def test_alignment_good(self):
         player = Character()
         player.setAlignment("Good")
-        self.assertEqual(player.getAlignment(), "Goods")
+        self.assertEqual(player.getAlignment(), "Good")
 
     def test_alignment_evil(self):
         player = Character()
