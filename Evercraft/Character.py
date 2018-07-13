@@ -8,6 +8,7 @@ class Character:
     hitpoints = None
     damage = None
     experience = None
+    level = 1
 
     def __init__(self):
         self.name = None
@@ -77,6 +78,11 @@ class Character:
 
     def gainExperience(self):
         self.experience += 10
+        if self.experience > 1000:
+            self.level += 1 # level increase by 1
+            self.hitpoints += 5
+            self.hitpoints += self.getModifier(self.abilities.get("CONSTITUTION"))
+            self.experience -= 1000 # reduce current XP by 1000
 
     def setAttribute(self, ability, value):
         self.abilities[ability] = value
@@ -94,4 +100,8 @@ class Character:
             self.hitpoints = 1
         if(self.damage < 1):
             self.damage = 1
+
+    def levelUp(self):
+        pass
+
 

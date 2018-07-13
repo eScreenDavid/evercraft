@@ -46,30 +46,36 @@ class TestCombatant(unittest.TestCase):
 
         for i in range(10):
             dieRoll = player.getDieRoll()
-            initialExperience = player.experience
+            currentExperience = player.experience
             
             if player.hitEnemy(dieRoll, challenger.getArmor()):
                 challenger.attacked(dieRoll)
-                self.assertEqual(player.experience, initialExperience + 10)
+                self.assertEqual(player.experience, currentExperience + 10)
 
             else:
-                self.assertEqual(player.experience, initialExperience)
+                self.assertEqual(player.experience, currentExperience)
 
     def test_levels_gained(self):
         player = Combatant()
         challenger = Combatant()
 
-        for i in range(1000):
-            dieRoll = player.getDieRoll()
-            player.hitEnemy(15, 10) # Make a guaranteed hit
+        for i in range(100):
+
+            #get current state
+            currentlevel = player.level
             currentHP = player.getHitPoints()
             currentAttack = player.getDamage()
+            
+            #make attack
+            dieRoll = player.getDieRoll()
+            player.hitEnemy(15, 10) # Make a guaranteed hit
 
-            if (player.experience > 1000):
-                player.levelUp()
+            
+            #check for level up
+            if (player.level > currentlevel): # player leveled up
                 self.assertTrue(player.getHitPoints() == currentHP + 5 + player.getModifier(player.abilities.get("CONSTITUTION")))
                 if (player.level % 2 == 0):
-                    self.assertTrue(player.hitEnemy(11-(player.level/2), 10)) #make sure player has bonus to hit gained on increase levels
+                    self.assertTrue(player.hitEnemy(11-(int(player.level/2)), 10)) #make sure player has bonus to hit gained on increase levels
                       
 
 if __name__ == '__main__':
