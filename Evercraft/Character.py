@@ -1,6 +1,14 @@
 
 class Character:
 
+    name = None
+    alignment = None
+    abilities = None
+    armor = None
+    hitpoints = None
+    damage = None
+    experience = None
+
     def __init__(self):
         self.name = None
         self.alignment = None
@@ -66,6 +74,9 @@ class Character:
 
     def getDamage(self):
         return self.damage
+
+    def gainExperience(self):
+        self.experience += 10
 
     def setAttribute(self, ability, value):
         self.abilities[ability] = value

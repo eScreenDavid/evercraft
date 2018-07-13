@@ -15,8 +15,8 @@ class Combatant(Character):
         return False
 
     def hitEnemy(self, roll, enemyAC):
-        if roll > enemyAC:
-            self.experience += 10
+        if roll + self.getModifier(self.abilities.get("STRENGTH")) > enemyAC:
+            self.gainExperience()
             return True
         return False
 
